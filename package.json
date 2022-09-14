@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.1.4",
+    "@samrum/vite-plugin-web-extension": "^2.0.0",
+    "@types/chrome": "^0.0.196",
     "@types/node": "^16.11.56",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
@@ -29,7 +31,6 @@
     "tailwindcss": "^3.1.8",
     "typescript": "~4.7.4",
     "vite": "^3.0.9",
-    "vue-tsc": "^0.40.7",
-    "webextension-polyfill": "^0.10.0"
+    "vue-tsc": "^0.40.7"
   }
 }
