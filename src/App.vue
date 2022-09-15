@@ -1,11 +1,11 @@
 <script setup lang="ts">
 function handlePermissions() {
-  chrome.permissions.request(
-    { origins: ['https://filo.dev/*'] },
-    function (granted) {
-      console.log('permision:', granted)
-    }
-  )
+  chrome.permissions.request({ origins: ['https://filo.dev/*'] }, () => {
+    chrome.storage.local.set({
+      filters: ['https://filo.dev/*'],
+      redirectTo: 'https://skladis.com'
+    })
+  })
 }
 </script>
 

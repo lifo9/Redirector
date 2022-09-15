@@ -1,13 +1,19 @@
 ///<reference types="chrome"/>
 
-chrome.webRequest.onBeforeRequest.addListener(
-  (_request) => {
-    return {
-      redirectUrl: 'https://skladis.com'
+chrome.storage.onChanged.addListener(() => {
+  chrome.storage.local.get(null, (storage) => {
+    const redirectHandler = (_request: any) => {
+      return {
+        redirectUrl: storage.redirectTo
+      }
     }
-  },
-  { urls: ['https://filo.dev/*'] },
-  ['blocking']
-)
 
+    chrome.webRequest.onBeforeRequest.removeListener(redirectHandler)
+    chrome.webRequest.onBeforeRequest.addListener(
+      redirectHandler,
+      { urls: storage.filters },
+      ['blocking']
+    )
+  })
+})
 export {} //
