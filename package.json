@@ -1,8 +1,9 @@
 {
   "name": "redirector",
   "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port=8002",
     "build": "run-p type-check build-only",
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
@@ -10,6 +11,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@vueuse/core": "^9.2.0",
     "vue": "^3.2.38"
   },
   "devDependencies": {

@@ -1,30 +1,18 @@
-<script setup lang="ts">
-function handlePermissions() {
-  chrome.permissions.request({ origins: ['https://filo.dev/*'] }, () => {
-    chrome.storage.local.set({
-      filters: ['https://filo.dev/*'],
-      redirectTo: 'https://skladis.com'
-    })
-  })
-}
-</script>
-
 <template>
   <div
-    class="flex flex-col h-screen overflow-hidden bg-gray-800 w-screen p-4 text-white"
+    class="flex flex-col h-screen overflow-hidden bg-slate-900 w-screen p-4 text-white"
   >
     <header class="w-full text-center p-4">
-      <h1 class="text-3xl font-bold tracking-wider">REDIRECTOR</h1>
+      <h1
+        class="text-3xl font-bold tracking-wider flex justify-center items-center select-none"
+      >
+        REDIRECTOR <img class="ml-4 w-12 invert" src="/icon.jpg" />
+      </h1>
     </header>
     <main class="flex-1 overflow-y-auto max-w-5xl w-full mx-auto">
-      <button
-        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        @click="handlePermissions"
-      >
-        CLICK ME!
-      </button>
+      <RedirectList class="mt-4" />
     </main>
-    <footer class="w-full text-center p-4">
+    <footer class="w-full text-center p-4 select-none">
       <p class="text-sm">
         Created by
         <a class="text-blue-400" href="https://filo.dev">Jakub Filo</a>
@@ -32,6 +20,10 @@ function handlePermissions() {
     </footer>
   </div>
 </template>
+
+<script setup lang="ts">
+import RedirectList from '@/components/RedirectList.vue'
+</script>
 
 <style>
 @import '@/assets/main.css';

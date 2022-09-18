@@ -1,8 +1,9 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.node.json",
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*"],
   "compilerOptions": {
     "composite": true,
+    "module": "esnext",
+    "moduleResolution": "node",
     "types": ["node", "chrome"]
   }
 }
