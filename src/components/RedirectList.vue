@@ -125,7 +125,6 @@ const savedNotification = ref(false)
 
 onMounted(() => {
   loadRules()
-  displaySavedNotification()
 })
 
 async function loadRules() {
