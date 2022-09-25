@@ -22,7 +22,23 @@ chrome.storage.onChanged.addListener(async () => {
       }
 
       const url = new URL(request.url)
-      url.host = rule.redirectHost
+      url.host =
+        rule.newHost && rule.newHost.length > 0 ? rule.newHost : url.host
+
+      if (
+        rule.pathRegex &&
+        rule.pathRegex.length > 0 &&
+        rule.pathValue &&
+        rule.pathValue.length > 0
+      ) {
+        // e.g.: "^\/(j)\/(\d+)\/?$" => /^\/(j)\/(\d+)\/?$/
+        const match = new RegExp(rule.pathRegex)
+        if (match.exec(url.pathname)) {
+          // url.pathname can be e.g.: "/j/123456"
+          // rule.pathValue can be e.g.: "/wc/$2/join" => /wc/123456/join
+          url.pathname = url.pathname.replace(match, rule.pathValue)
+        }
+      }
 
       return {
         redirectUrl: url.href

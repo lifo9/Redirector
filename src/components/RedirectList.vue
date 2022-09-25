@@ -14,11 +14,23 @@
           @input="handleUpdateRule({ id: item.id, origin: $event })"
         />
       </template>
-      <template #redirectHost="{ item }">
+      <template #newHost="{ item }">
         <EditRule
-          :value="item.redirectHost"
+          :value="item.newHost"
           placeholder="new-domain.tld"
-          @input="handleUpdateRule({ id: item.id, redirectHost: $event })"
+          @input="handleUpdateRule({ id: item.id, newHost: $event })"
+        />
+      </template>
+      <template #pathRegex="{ item }">
+        <EditRule
+          :value="item.pathRegex"
+          @input="handleUpdateRule({ id: item.id, pathRegex: $event })"
+        />
+      </template>
+      <template #pathValue="{ item }">
+        <EditRule
+          :value="item.pathValue"
+          @input="handleUpdateRule({ id: item.id, pathValue: $event })"
         />
       </template>
       <template #active="{ item }">
@@ -59,8 +71,10 @@ import EditRule from '@/components/EditRule.vue'
 
 const columns: Columns = {
   id: { label: 'ID', align: 'center', shrink: true },
-  origin: { label: 'Origin', width: '50%' },
-  redirectHost: { label: 'Redirect host', width: '50%' },
+  origin: { label: 'From origin', width: '25%' },
+  newHost: { label: 'To host', width: '25%' },
+  pathRegex: { label: 'Path regex', width: '25%' },
+  pathValue: { label: 'New path', width: '25%' },
   active: { label: 'Active', align: 'center', shrink: true },
   actions: { label: 'Actions', align: 'center', shrink: true }
 }
@@ -81,7 +95,9 @@ function createRule() {
   const blankRule: RedirectItem = {
     id: lastRule ? lastRule.id + 1 : 1,
     origin: '',
-    redirectHost: '',
+    newHost: '',
+    pathRegex: '',
+    pathValue: '',
     active: false
   }
 
@@ -91,7 +107,9 @@ function createRule() {
 function handleUpdateRule({
   id,
   origin = undefined,
-  redirectHost = undefined,
+  newHost = undefined,
+  pathRegex = undefined,
+  pathValue = undefined,
   active = undefined
 }: RedirectItemUpdate) {
   const rule = data.value.find((rule) => rule.id === id)
@@ -100,7 +118,9 @@ function handleUpdateRule({
     data.value.splice(rule.id - 1, 1, {
       id: id,
       origin: origin ? origin : rule.origin,
-      redirectHost: redirectHost ? redirectHost : rule.redirectHost,
+      newHost: newHost ? newHost : rule.newHost,
+      pathRegex: pathRegex ? pathRegex : rule.pathRegex,
+      pathValue: pathValue ? pathValue : rule.pathValue,
       active: active !== undefined ? active : rule.active
     })
   }

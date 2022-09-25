@@ -4,13 +4,15 @@ type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
 export type RedirectItem = {
   id: number
   origin: string
-  redirectHost: string
+  newHost: string
+  pathRegex?: string
+  pathValue?: string
   active: boolean
 }
 
 export type RedirectItemUpdate = PartialBy<
   RedirectItem,
-  'origin' | 'redirectHost' | 'active'
+  'origin' | 'newHost' | 'active'
 >
 
 export type RedirectList = RedirectItem[]

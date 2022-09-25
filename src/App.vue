@@ -9,7 +9,7 @@
         REDIRECTOR <img class="ml-4 w-12 invert" src="/icon.jpg" />
       </h1>
     </header>
-    <main class="flex-1 overflow-y-auto max-w-5xl w-full mx-auto">
+    <main class="flex-1 overflow-y-auto max-w-7xl w-full mx-auto">
       <RedirectList class="mt-4" />
     </main>
     <footer class="w-full text-center p-4 select-none">
