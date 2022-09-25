@@ -6,7 +6,7 @@ Web extension, which allows you to set custom redirects. It is useful for redire
 2. Go to [about:addons](about:addons)
 3. Gear icon -> Install Add-on From File...
 4. Click three dots on extension card -> Preferences
-5. Import [Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt)
+5. Import [Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt) (change extension to `.json`)
 6. Profit
 
 ## Chrome installation
@@ -15,7 +15,7 @@ Web extension, which allows you to set custom redirects. It is useful for redire
 3. Developer mode ON
 4. Load unpacked
 5. Click details -> extension options
-6. Import [Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt)
+6. Import [Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt) (change extension to `.json`)
 7. Profit
 
 https://user-images.githubusercontent.com/40486100/192162460-89ff4857-c958-4df0-b8a8-da284c0a05ec.mov
