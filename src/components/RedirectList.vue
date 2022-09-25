@@ -1,7 +1,16 @@
 <template>
   <div>
-    <div class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between">
-      <div class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between">
+    <span
+      class="bg-green-900 py-2 px-20 rounded-sm transition-all ease-in-out duration-500 absolute right-0 top-0 my-9 mx-4"
+      :class="savedNotification ? ' opacity-100' : 'opacity-0'"
+      >Rules saved</span
+    >
+    <div
+      class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between items-center"
+    >
+      <div
+        class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between items-center"
+      >
         <input
           type="file"
           accept=".json"
@@ -112,9 +121,11 @@ const columns: Columns = {
 
 const data: Ref<RedirectList> = ref([])
 const importFile = ref()
+const savedNotification = ref(false)
 
 onMounted(() => {
   loadRules()
+  displaySavedNotification()
 })
 
 async function loadRules() {
@@ -177,6 +188,7 @@ async function handleSaveRules() {
         if (granted) {
           await removeUnusedPermissions(origins)
           await saveRedirects(data.value)
+          displaySavedNotification()
         }
       }
     )
@@ -207,5 +219,12 @@ function handleImport(event: Event) {
 
     reader.readAsText(file)
   }
+}
+
+function displaySavedNotification() {
+  savedNotification.value = true
+  setTimeout(() => {
+    savedNotification.value = false
+  }, 2000)
 }
 </script>
