@@ -6,7 +6,7 @@
       <h1
         class="text-3xl font-bold tracking-wider flex justify-center items-center select-none"
       >
-        REDIRECTOR <img class="ml-4 w-12 invert" src="/icon.jpg" />
+        REDIRECTOR <img class="ml-4 w-12 invert" src="/icon.png" />
       </h1>
     </header>
     <main class="flex-1 overflow-y-auto max-w-7xl w-full mx-auto">
