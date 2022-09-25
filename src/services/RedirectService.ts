@@ -11,16 +11,42 @@ export async function saveRedirects(redirects: RedirectList) {
   await chrome.storage.local.set({ redirects: JSON.stringify(redirects) })
 }
 
-export async function deleteRule(id: number) {
-  const redirects = await getRedirects()
-  const deleteOrigin = redirects.find((redirect) => redirect.id === id)?.filter
-
-  if (deleteOrigin) {
-    chrome.permissions.remove({
-      origins: [deleteOrigin]
-    })
+export async function removeUnusedPermissions(newOrigins: string[]) {
+  if (!newOrigins) {
+    newOrigins = []
   }
-  await saveRedirects(redirects.filter((redirect) => redirect.id !== id))
+
+  await new Promise<void>((resolve) => {
+    // eslint-disable-next-line no-undef
+    chrome.permissions.getAll(async (permissions) => {
+      await new Promise<void>((resolve) => {
+        let deleted = 0
+        const rulesToDelete =
+          permissions.origins?.filter(
+            (origin) => !newOrigins.includes(origin)
+          ) || []
+        if (rulesToDelete.length === 0) {
+          resolve()
+        }
+
+        rulesToDelete.forEach((origin) => {
+          // eslint-disable-next-line no-undef
+          chrome.permissions.remove(
+            {
+              origins: [origin]
+            },
+            () => {
+              deleted++
+              if (deleted === rulesToDelete.length) {
+                resolve()
+              }
+            }
+          )
+        })
+      })
+      resolve()
+    })
+  })
 }
 
 const readLocalStorage = async (key: string) => {

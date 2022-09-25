@@ -7,16 +7,18 @@
       Save rules <SaveIcon />
     </div>
     <RTable :columns="columns" :data="data">
-      <template #filter="{ item }">
+      <template #origin="{ item }">
         <EditRule
-          :value="item.filter"
-          @input="handleUpdateRule({ id: item.id, filter: $event })"
+          :value="item.origin"
+          placeholder="https://domain.tld/*"
+          @input="handleUpdateRule({ id: item.id, origin: $event })"
         />
       </template>
-      <template #redirectUrl="{ item }">
+      <template #redirectHost="{ item }">
         <EditRule
-          :value="item.redirectUrl"
-          @input="handleUpdateRule({ id: item.id, redirectUrl: $event })"
+          :value="item.redirectHost"
+          placeholder="new-domain.tld"
+          @input="handleUpdateRule({ id: item.id, redirectHost: $event })"
         />
       </template>
       <template #active="{ item }">
@@ -47,9 +49,9 @@ import { onMounted, ref, type Ref } from 'vue'
 import RToggle from '@/components/RToggle.vue'
 import DeleteAction from '@/components/DeleteAction.vue'
 import {
-  deleteRule,
   getRedirects,
-  saveRedirects
+  saveRedirects,
+  removeUnusedPermissions
 } from '@/services/RedirectService'
 import PlusIcon from '@/components/icons/PlusIcon.vue'
 import SaveIcon from '@/components/icons/SaveIcon.vue'
@@ -57,8 +59,8 @@ import EditRule from '@/components/EditRule.vue'
 
 const columns: Columns = {
   id: { label: 'ID', align: 'center', shrink: true },
-  filter: { label: 'Filter', width: '50%' },
-  redirectUrl: { label: 'Redirect URL', width: '50%' },
+  origin: { label: 'Origin', width: '50%' },
+  redirectHost: { label: 'Redirect host', width: '50%' },
   active: { label: 'Active', align: 'center', shrink: true },
   actions: { label: 'Actions', align: 'center', shrink: true }
 }
@@ -73,23 +75,23 @@ async function loadRules() {
   data.value = await getRedirects()
 }
 
-async function createRule() {
+function createRule() {
   const lastRule = data.value[data.value.length - 1]
 
   const blankRule: RedirectItem = {
     id: lastRule ? lastRule.id + 1 : 1,
-    filter: '',
-    redirectUrl: '',
+    origin: '',
+    redirectHost: '',
     active: false
   }
 
   data.value.push(blankRule)
 }
 
-async function handleUpdateRule({
+function handleUpdateRule({
   id,
-  filter = undefined,
-  redirectUrl = undefined,
+  origin = undefined,
+  redirectHost = undefined,
   active = undefined
 }: RedirectItemUpdate) {
   const rule = data.value.find((rule) => rule.id === id)
@@ -97,39 +99,49 @@ async function handleUpdateRule({
   if (rule) {
     data.value.splice(rule.id - 1, 1, {
       id: id,
-      filter: filter ? filter : rule.filter,
-      redirectUrl: redirectUrl ? redirectUrl : rule.redirectUrl,
+      origin: origin ? origin : rule.origin,
+      redirectHost: redirectHost ? redirectHost : rule.redirectHost,
       active: active !== undefined ? active : rule.active
     })
   }
 }
 
 async function handleSaveRules() {
-  const filters = data.value
-    .filter((rule) => rule.filter.length > 0)
-    .map((rule) => rule.filter)
+  const origins = data.value
+    .filter((rule) => rule.origin.length > 0)
+    .map((rule) => rule.origin)
 
   // Permissions must be requested from inside a user gesture, like a button's
   // click handler.
+  // We cannot e.g. wrap the chrome.permissions.request into promise
+  // or move this logic into RedirectService :(
   try {
     // eslint-disable-next-line no-undef
     chrome.permissions.request(
       {
-        origins: filters
+        origins: origins
       },
-      (granted: boolean) => {
+      async (granted: boolean) => {
         if (granted) {
-          saveRedirects(data.value)
+          await removeUnusedPermissions(origins)
+          await saveRedirects(data.value)
         }
       }
     )
   } catch (e) {
-    alert(`Invalid filters: ${filters.join(' | ')}`)
+    alert(`Invalid origins: ${origins.join(' | ')}`)
   }
 }
 
 async function handleDeleteRule(id: number) {
-  await deleteRule(id)
-  await loadRules()
+  data.value.splice(id - 1, 1)
+
+  let counter = 1
+  data.value = data.value.map((rule) => {
+    return {
+      ...rule,
+      ...{ id: counter++ }
+    }
+  })
 }
 </script>

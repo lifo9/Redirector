@@ -3,14 +3,14 @@ type PartialBy<T, K extends keyof T> = Omit<T, K> & Partial<Pick<T, K>>
 
 export type RedirectItem = {
   id: number
-  filter: string
-  redirectUrl: string
+  origin: string
+  redirectHost: string
   active: boolean
 }
 
 export type RedirectItemUpdate = PartialBy<
   RedirectItem,
-  'filter' | 'redirectUrl' | 'active'
+  'origin' | 'redirectHost' | 'active'
 >
 
 export type RedirectList = RedirectItem[]

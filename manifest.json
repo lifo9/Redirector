@@ -1,5 +1,6 @@
 {
   "name": "Redirector",
+  "description": "Allows you to set custom redirects. It is useful e.g. for redirecting popular sites to alternative frontends",
   "version": "1.0.0",
   "manifest_version": 2,
   "author": "Jakub Filo",

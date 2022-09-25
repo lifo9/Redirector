@@ -27,8 +27,7 @@ const emit = defineEmits(['change'])
   @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
 }
 input:checked + .toggle-bg:after {
-  transform: translateX(100%);
-  @apply border-white;
+  @apply border-white translate-x-[100%];
 }
 input:checked + .toggle-bg {
   @apply bg-green-600 border-green-600;
