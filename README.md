@@ -3,3 +3,4 @@ Web extension, which allows you to set custom redirects. It is useful for redire
 
 https://user-images.githubusercontent.com/40486100/192162460-89ff4857-c958-4df0-b8a8-da284c0a05ec.mov
 
+[Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt)
