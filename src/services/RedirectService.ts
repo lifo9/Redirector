@@ -49,6 +49,22 @@ export async function removeUnusedPermissions(newOrigins: string[]) {
   })
 }
 
+export async function importRules(redirects: string) {
+  saveRedirects(JSON.parse(redirects))
+}
+
+export function downloadRules(
+  content: string,
+  fileName: string,
+  contentType: string = 'text/plain'
+) {
+  const a = document.createElement('a')
+  const file = new Blob([content], { type: contentType })
+  a.href = URL.createObjectURL(file)
+  a.download = fileName
+  a.click()
+}
+
 const readLocalStorage = async (key: string) => {
   return new Promise((resolve) => {
     chrome.storage.local.get([key], (result) => {

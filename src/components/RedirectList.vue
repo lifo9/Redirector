@@ -1,10 +1,38 @@
 <template>
   <div>
-    <div
-      class="flex gap-2 p-3.5 mb-4 text-center bg-blue-600 rounded-sm text-xl justify-center items-center cursor-pointer select-none"
-      @click="handleSaveRules"
-    >
-      Save rules <SaveIcon />
+    <div class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between">
+      <div class="flex flex-wrap my-4 gap-4 md:gap-20 justify-between">
+        <input
+          type="file"
+          accept=".json"
+          ref="importFile"
+          class="hidden"
+          @change="handleImport"
+        />
+        <div
+          class="flex gap-2 p-3.5 text-center bg-yellow-700 rounded-sm text-xl justify-center items-center cursor-pointer select-none min-w-1/4"
+          @click="importFile.click()"
+        >
+          Import rules <UploadIcon />
+        </div>
+        <div
+          class="flex gap-2 p-3.5 text-center bg-red-900 rounded-sm text-xl justify-center items-center cursor-pointer select-none min-w-1/4"
+          @click="
+            downloadRules(
+              JSON.stringify(data),
+              `rules_${new Date().getTime()}.json`
+            )
+          "
+        >
+          Export rules <DownloadIcon />
+        </div>
+      </div>
+      <div
+        class="flex gap-2 p-3.5 text-center bg-blue-600 rounded-sm text-xl justify-center items-center cursor-pointer select-none min-w-1/4"
+        @click="handleSaveRules"
+      >
+        Save rules <SaveIcon />
+      </div>
     </div>
     <RTable :columns="columns" :data="data">
       <template #origin="{ item }">
@@ -63,11 +91,14 @@ import DeleteAction from '@/components/DeleteAction.vue'
 import {
   getRedirects,
   saveRedirects,
-  removeUnusedPermissions
+  removeUnusedPermissions,
+  downloadRules
 } from '@/services/RedirectService'
 import PlusIcon from '@/components/icons/PlusIcon.vue'
 import SaveIcon from '@/components/icons/SaveIcon.vue'
 import EditRule from '@/components/EditRule.vue'
+import DownloadIcon from '@/components/icons/DownloadIcon.vue'
+import UploadIcon from '@/components/icons/UploadIcon.vue'
 
 const columns: Columns = {
   id: { label: 'ID', align: 'center', shrink: true },
@@ -80,6 +111,7 @@ const columns: Columns = {
 }
 
 const data: Ref<RedirectList> = ref([])
+const importFile = ref()
 
 onMounted(() => {
   loadRules()
@@ -163,5 +195,17 @@ async function handleDeleteRule(id: number) {
       ...{ id: counter++ }
     }
   })
+}
+
+function handleImport(event: Event) {
+  const file = (event.target as HTMLInputElement).files?.item(0)
+  if (file) {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      data.value = JSON.parse(e.target!.result as string)
+    }
+
+    reader.readAsText(file)
+  }
 }
 </script>
