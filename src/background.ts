@@ -37,6 +37,8 @@ chrome.storage.onChanged.addListener(async () => {
           // url.pathname can be e.g.: "/j/123456"
           // rule.pathValue can be e.g.: "/wc/$2/join" => /wc/123456/join
           url.pathname = url.pathname.replace(match, rule.pathValue)
+        } else {
+          return
         }
       }
 

@@ -149,10 +149,10 @@ function handleUpdateRule({
   if (rule) {
     data.value.splice(rule.id - 1, 1, {
       id: id,
-      origin: origin ? origin : rule.origin,
-      newHost: newHost ? newHost : rule.newHost,
-      pathRegex: pathRegex ? pathRegex : rule.pathRegex,
-      pathValue: pathValue ? pathValue : rule.pathValue,
+      origin: origin || origin === '' ? origin : rule.origin,
+      newHost: newHost || newHost === '' ? newHost : rule.newHost,
+      pathRegex: pathRegex || pathRegex === '' ? pathRegex : rule.pathRegex,
+      pathValue: pathValue || pathValue === '' ? pathValue : rule.pathValue,
       active: active !== undefined ? active : rule.active
     })
   }
