@@ -2,7 +2,7 @@
 Web extension, which allows you to set custom redirects. It is useful for redirecting popular sites to alternative frontends (e.g. youtube to invidious), or restoring functionality (e.g. automatic redirection to Zoom's web client).
 
 ## Firefox installation
-1. [Install](https://github.com/lifo9/Redirector/releases/download/release/6808086c10314b1cb2f4-1.0.0.xpi)
+1. [Install](https://addons.mozilla.org/en-US/firefox/addon/my-redirector/)
 2. Right click on extension icon -> Manage Extension -> Three dots -> Preferences
 3. Import [Example rules](https://github.com/lifo9/Redirector/files/9641757/rules_1664131688943.txt) (change extension to `.json`)
 4. Profit
