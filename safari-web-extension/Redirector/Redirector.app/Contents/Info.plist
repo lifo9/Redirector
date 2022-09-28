@@ -46,6 +46,8 @@
 	<string>1401</string>
 	<key>DTXcodeBuild</key>
 	<string>14A400</string>
+	<key>DTXcodeBuildDistribution</key>
+	<string>14A400</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>

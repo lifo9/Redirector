@@ -45,6 +45,10 @@
 	<dict>
 		<key>Resources/assets/RedirectService.4a120354.js</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			GNXepdBSwthMEKy8o39kzWqMB28=
+			</data>
 			<key>hash2</key>
 			<data>
 			QyhC5ox4aGJ9cSmJE1eO39V8x8LhNMCHeDPiF7H+tOA=
@@ -52,6 +56,10 @@
 		</dict>
 		<key>Resources/assets/background.83c0be51.js</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			N750K3yYGj6bAjbsiqsu7s7r6PI=
+			</data>
 			<key>hash2</key>
 			<data>
 			vt+gBFh5QRboqakiZhJlUL+RAb0I7QcwWlf9ZW9HUms=
@@ -59,6 +67,10 @@
 		</dict>
 		<key>Resources/assets/index.93648e0c.js</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			an/SS9SLqWZ6YHyiaicSmlAiXBQ=
+			</data>
 			<key>hash2</key>
 			<data>
 			RnVy8/t2LLsDBIQlbwvGpHCDF3gcOcs+d96cZIA2rzY=
@@ -66,6 +78,10 @@
 		</dict>
 		<key>Resources/assets/index.e6fcd395.css</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			04BHpuI6O0+sPk4Dd1E/wLprC0s=
+			</data>
 			<key>hash2</key>
 			<data>
 			5vzTlUvFCljqKUz82Lp47363GbYsolK074bHtVwVt28=
@@ -73,6 +89,10 @@
 		</dict>
 		<key>Resources/background.html</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			3Oh/S2qlWPAlsKvzsorrlTCc7Mo=
+			</data>
 			<key>hash2</key>
 			<data>
 			b0QEvXR9qa72fTDYIas4fyEwIeXkfD0ZFeysUky0F54=
@@ -80,6 +100,10 @@
 		</dict>
 		<key>Resources/favicon.ico</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			T8jBFQKPgsjCeM9qQfFafAHoIKI=
+			</data>
 			<key>hash2</key>
 			<data>
 			NzMBqklQnPt8zGQohAAGALLYvUxCaNwHfsj69fyFlrY=
@@ -87,6 +111,10 @@
 		</dict>
 		<key>Resources/icon.png</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			TXlWz2EMO7tIehOC3ZRBIlASY24=
+			</data>
 			<key>hash2</key>
 			<data>
 			Rm9ynsTub522mA9UpCpClg4PCluAfro7eUgzW8BI/ic=
@@ -94,6 +122,10 @@
 		</dict>
 		<key>Resources/index.html</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			SeiyXF0jFFTkbElN0X3G0XaIbdA=
+			</data>
 			<key>hash2</key>
 			<data>
 			DZMq9ZAv/BD5MhGwqZzNEWyx6gqlUHnEq3a1sJRhEyI=
@@ -101,6 +133,10 @@
 		</dict>
 		<key>Resources/manifest.json</key>
 		<dict>
+			<key>hash</key>
+			<data>
+			bktIuq0fh4PObcBAG/b9smiN/GE=
+			</data>
 			<key>hash2</key>
 			<data>
 			izdlb+M0DrVDoLkxj1MyAi/gDKzOwld/lHyuKT1t35c=

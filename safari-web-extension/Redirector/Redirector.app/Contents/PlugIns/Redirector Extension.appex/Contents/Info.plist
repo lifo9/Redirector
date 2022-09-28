@@ -42,6 +42,8 @@
 	<string>1401</string>
 	<key>DTXcodeBuild</key>
 	<string>14A400</string>
+	<key>DTXcodeBuildDistribution</key>
+	<string>14A400</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.14</string>
 	<key>NSExtension</key>
