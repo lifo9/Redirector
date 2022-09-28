@@ -47,7 +47,7 @@
       <template #origin="{ item }">
         <EditRule
           :value="item.origin"
-          placeholder="https://domain.tld/*"
+          placeholder="original-domain.tld"
           @input="handleUpdateRule({ id: item.id, origin: $event })"
         />
       </template>
@@ -113,8 +113,8 @@ const columns: Columns = {
   id: { label: 'ID', align: 'center', shrink: true },
   origin: { label: 'From origin', width: '25%' },
   newHost: { label: 'To host', width: '25%' },
-  pathRegex: { label: 'Path regex', width: '25%' },
-  pathValue: { label: 'New path', width: '25%' },
+  // pathRegex: { label: 'Path regex', width: '25%' },
+  // pathValue: { label: 'New path', width: '25%' },
   active: { label: 'Active', align: 'center', shrink: true },
   actions: { label: 'Actions', align: 'center', shrink: true }
 }
@@ -171,7 +171,7 @@ function handleUpdateRule({
 async function handleSaveRules() {
   const origins = data.value
     .filter((rule) => rule.origin.length > 0)
-    .map((rule) => rule.origin)
+    .map((rule) => `*://*.${rule.origin}/*`)
 
   // Permissions must be requested from inside a user gesture, like a button's
   // click handler.
