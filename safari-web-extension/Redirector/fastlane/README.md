@@ -26,12 +26,12 @@ Push a new beta build to TestFlight
 ----
 
 
-## macos
+## Mac
 
-### macos beta
+### mac beta
 
 ```sh
-[bundle exec] fastlane macos beta
+[bundle exec] fastlane mac beta
 ```
 
 Push a new beta build to TestFlight

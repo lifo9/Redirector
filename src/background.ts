@@ -52,8 +52,6 @@ async function loadRules() {
   })
 }
 
-chrome.runtime.onStartup.addListener(() => {
-  loadRules()
-})
+loadRules()
 chrome.storage.onChanged.addListener(loadRules)
 export {} //

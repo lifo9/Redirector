@@ -20,7 +20,8 @@
   },
   "permissions": [
     "storage",
-    "declarativeNetRequest"
+    "declarativeNetRequest",
+    "<all_urls>"
   ],
   "optional_permissions": [
     "*://*/*"

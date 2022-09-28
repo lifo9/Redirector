@@ -18,6 +18,6 @@
     "page": "index.html",
     "open_in_tab": true
   },
-  "permissions": ["storage","declarativeNetRequest"],
+  "permissions": ["storage","declarativeNetRequest","<all_urls>"],
   "optional_permissions": ["*://*/*"]
 }

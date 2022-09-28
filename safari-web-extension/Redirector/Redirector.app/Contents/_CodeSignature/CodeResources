@@ -14,15 +14,15 @@
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/Info.plist</key>
 		<data>
-		g2WyVfAOLYW4Pnj3uVmqvcuaCs0=
+		YDdHEEE/ql1GNU84i5aE5OeYW7E=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/MainMenu.nib</key>
 		<data>
-		Ht1zWSKA76N/BN54w4RMgLbPlAw=
+		d4Z3XKjj8zPCeacp3T7tolmYWKk=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/NSWindowController-B8D-0N-5wS.nib</key>
 		<data>
-		K8fJA6wyIzmK7O41B3xfIMbnMTs=
+		UQ3pAVFBTotJ56Y2ygv6dFRbnfs=
 		</data>
 		<key>Resources/Base.lproj/Main.storyboardc/XfG-lQ-9wD-view-m2S-Jp-Qdl.nib</key>
 		<data>
@@ -195,7 +195,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			o490IDjr78Ye9xRu0qwUWjh8smM=
+			PbkCPC9n3YsOoWon2GZ0m43ga0A=
 			</data>
 			<key>requirement</key>
 			<string>identifier "com.jakubfilo.Redirector.Extension" and anchor apple generic and certificate leaf[subject.CN] = "Apple Development: jakub@filo.dev (KHD9W495F7)" and certificate 1[field.1.2.840.113635.100.6.2.1] /* exists */</string>
@@ -218,21 +218,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			2DBlZTZfnEIQID7BfMgc6S6PMG9JEed7e7cHioFM3aI=
+			k/TCY9H7QUZ5B4HxRYHMqKt3gu9YaRwFENNpzrjr9t0=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/MainMenu.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BmpUisYBvjIro5040LVygnw8dIEah6PogTYlOGIGwms=
+			CrVXRLAO3ERmI03dQsvKkS2OmWwH49E+DXo/9u9L5HA=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/NSWindowController-B8D-0N-5wS.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ozw5XpE0XCLWXhtvRugv2QZyMP0YYtLbVyGnbgc2ieo=
+			En6cJEn+tmgv2OWqNd2w/8PwAfVw/5Rkvv/KEtgbBMc=
 			</data>
 		</dict>
 		<key>Resources/Base.lproj/Main.storyboardc/XfG-lQ-9wD-view-m2S-Jp-Qdl.nib</key>
