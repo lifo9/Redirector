@@ -5,7 +5,7 @@ import { getRedirects } from '@/services/RedirectService'
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, prefer-const
 let handlers: any[] = []
 
-chrome.storage.onChanged.addListener(async () => {
+const loadRules = async () => {
   const activeRedirects = (await getRedirects()).filter(
     (rule) => rule.active === true
   )
@@ -54,5 +54,8 @@ chrome.storage.onChanged.addListener(async () => {
       ['blocking']
     )
   })
-})
+}
+
+chrome.storage.onChanged.addListener(loadRules)
+loadRules()
 export {} //
