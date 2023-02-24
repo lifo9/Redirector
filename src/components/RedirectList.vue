@@ -180,7 +180,7 @@ function handleUpdateRule({
 async function handleSaveRules() {
   const origins = data.value
     .filter((rule) => rule.origin.length > 0)
-    .map((rule) => `https://${rule.origin}/*`)
+    .map((rule) => `*://${rule.origin}/*`)
 
   // Permissions must be requested from inside a user gesture, like a button's
   // click handler.
