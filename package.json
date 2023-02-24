@@ -1,6 +1,7 @@
 {
   "name": "redirector",
   "version": "1.0.1",
+  "description": "Allows you to set custom redirects. It is useful e.g. for redirecting popular sites to alternative frontends",
   "license": "MIT",
   "scripts": {
     "dev": "vite --port=8002",
