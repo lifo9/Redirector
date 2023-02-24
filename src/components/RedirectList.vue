@@ -118,16 +118,18 @@ const columns: Columns = {
   ...{
     id: { label: 'ID', align: 'center', shrink: true },
     origin: { label: 'From origin', width: '25%' },
-    newHost: { label: 'To host', width: '25%' },
-    active: { label: 'Active', align: 'center', shrink: true },
-    actions: { label: 'Actions', align: 'center', shrink: true }
+    newHost: { label: 'To host', width: '25%' }
   },
   ...(!isSafari
     ? {
         pathRegex: { label: 'Path regex', width: '25%' },
         pathValue: { label: 'New path', width: '25%' }
       }
-    : {})
+    : {}),
+  ...{
+    active: { label: 'Active', align: 'center', shrink: true },
+    actions: { label: 'Actions', align: 'center', shrink: true }
+  }
 }
 
 onMounted(() => {
