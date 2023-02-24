@@ -109,19 +109,26 @@ import EditRule from '@/components/EditRule.vue'
 import DownloadIcon from '@/components/icons/DownloadIcon.vue'
 import UploadIcon from '@/components/icons/UploadIcon.vue'
 
-const columns: Columns = {
-  id: { label: 'ID', align: 'center', shrink: true },
-  origin: { label: 'From origin', width: '25%' },
-  newHost: { label: 'To host', width: '25%' },
-  pathRegex: { label: 'Path regex', width: '25%' },
-  pathValue: { label: 'New path', width: '25%' },
-  active: { label: 'Active', align: 'center', shrink: true },
-  actions: { label: 'Actions', align: 'center', shrink: true }
-}
-
 const data: Ref<RedirectList> = ref([])
 const importFile = ref()
 const savedNotification = ref(false)
+const isSafari = import.meta.env.VITE_BROWSER_TYPE === 'safari'
+
+const columns: Columns = {
+  ...{
+    id: { label: 'ID', align: 'center', shrink: true },
+    origin: { label: 'From origin', width: '25%' },
+    newHost: { label: 'To host', width: '25%' },
+    active: { label: 'Active', align: 'center', shrink: true },
+    actions: { label: 'Actions', align: 'center', shrink: true }
+  },
+  ...(!isSafari
+    ? {
+        pathRegex: { label: 'Path regex', width: '25%' },
+        pathValue: { label: 'New path', width: '25%' }
+      }
+    : {})
+}
 
 onMounted(() => {
   loadRules()

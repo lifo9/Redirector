@@ -18,6 +18,9 @@ Web extension, which allows you to set custom redirects. It is useful for redire
 
 # Build it yourself
 ```
+# Safari uses declarativeNetRequest API, while uses Firefox webRequest API.
+# You have to set VITE_BROWSER_TYPE variable before building the app to either 'safari' or 'firefox'
+export VITE_BROWSER_TYPE='firefox'
 yarn install
 yarn build
 ```
