@@ -47,7 +47,7 @@
       <template #origin="{ item }">
         <EditRule
           :value="item.origin"
-          placeholder="https://domain.tld/*"
+          placeholder="domain.tld"
           @input="handleUpdateRule({ id: item.id, origin: $event })"
         />
       </template>
@@ -171,7 +171,7 @@ function handleUpdateRule({
 async function handleSaveRules() {
   const origins = data.value
     .filter((rule) => rule.origin.length > 0)
-    .map((rule) => rule.origin)
+    .map((rule) => `https://${rule.origin}/*`)
 
   // Permissions must be requested from inside a user gesture, like a button's
   // click handler.

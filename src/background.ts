@@ -50,7 +50,7 @@ const loadRules = async () => {
 
     chrome.webRequest.onBeforeRequest.addListener(
       handler,
-      { urls: [rule.origin] },
+      { urls: [`https://${rule.origin}/*`] },
       ['blocking']
     )
   })
