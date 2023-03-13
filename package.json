@@ -19,7 +19,7 @@
     "@rushstack/eslint-patch": "^1.1.4",
     "@samrum/vite-plugin-web-extension": "^3.1.1",
     "@types/chrome": "^0.0.219",
-    "@types/node": "^18.14.6",
+    "@types/node": "^18.15.1",
     "@vitejs/plugin-vue": "^3.0.3",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.0",
