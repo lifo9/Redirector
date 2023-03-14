@@ -29,6 +29,7 @@ jobs:
       - name: Deploy iOS Beta to TestFlight via Fastlane
         uses: maierj/fastlane-action@v3.0.0
         with:
+          subdirectory: xcode/
           lane: closed_beta
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
