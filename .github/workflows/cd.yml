@@ -26,7 +26,7 @@ jobs:
           bundler-cache: true
 
       - name: Deploy iOS Beta to TestFlight via Fastlane
-        working-directory: xcode
+        working-directory: xcode/fastlane
         run: bundle exec fastlane ios closed_beta
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
