@@ -86,6 +86,7 @@ platform :ios do
             DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
         }
       },
+      xcargs: "-allowProvisioningUpdates",
       disable_xcpretty: true
     )
 
