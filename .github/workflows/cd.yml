@@ -13,6 +13,8 @@ jobs:
   deploy:
     name: Deploying to Testflight
     runs-on: macOS-latest
+    defaults:
+      working-directory: xcode
 
     steps:
       - name: Checkout repository
@@ -28,7 +30,6 @@ jobs:
         uses: maierj/fastlane-action@v3.0.0
         with:
           lane: closed_beta
-        working-directory: xcode
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
