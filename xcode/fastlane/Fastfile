@@ -85,7 +85,8 @@ platform :ios do
         provisioningProfiles: {
             DEVELOPER_APP_ID => PROVISIONING_PROFILE_SPECIFIER
         }
-      }
+      },
+      disable_xcpretty: true
     )
 
     pilot(

@@ -10,8 +10,8 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Build extension"
-               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;if [ -d &quot;/Users/runner/&quot; ]; then&#10;  export PATH=$PATH:/Users/runner/.yarn/bin:/usr/local/bin&#10;fi&#10;&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
-               shellToInvoke = "&#10;">
+               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
+               shellToInvoke = "/bin/bash&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
@@ -98,7 +98,8 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Build extension"
-               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;if [ -d &quot;/Users/runner/&quot; ]; then&#10;  export PATH=$PATH:/Users/runner/.yarn/bin:/usr/local/bin&#10;fi&#10;&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;">
+               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
+               shellToInvoke = "/bin/bash">
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
