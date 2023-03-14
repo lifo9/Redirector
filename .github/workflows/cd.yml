@@ -27,7 +27,7 @@ jobs:
 
       - name: Deploy iOS Beta to TestFlight via Fastlane
         working-directory: xcode
-        run: fastlane ios closed_beta
+        run: bundle exec fastlane ios closed_beta
         env:
           APP_STORE_CONNECT_TEAM_ID: '${{ secrets.APP_STORE_CONNECT_TEAM_ID }}'
           DEVELOPER_APP_ID: '${{ secrets.DEVELOPER_APP_ID }}'
