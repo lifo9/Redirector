@@ -14,7 +14,8 @@ jobs:
     name: Deploying to Testflight
     runs-on: macOS-latest
     defaults:
-      working-directory: xcode
+      run:
+        working-directory: xcode
 
     steps:
       - name: Checkout repository
