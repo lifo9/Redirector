@@ -136,3 +136,6 @@ iOSInjectionProject/
 
 Config.xcconfig
 report.xml
+.bundle
+vendor
+build
