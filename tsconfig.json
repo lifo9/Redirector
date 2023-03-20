@@ -10,7 +10,8 @@
     "strict": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "ignoreDeprecations": "5.0"
   },
 
   "references": [
