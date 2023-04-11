@@ -37,7 +37,12 @@ export default defineConfig(({ mode }) => {
             open_in_tab: true
           },
           permissions: isSafari
-            ? ['storage', 'declarativeNetRequest', '<all_urls>']
+            ? [
+                'storage',
+                'declarativeNetRequest',
+                'declarativeNetRequestWithHostAccess',
+                '<all_urls>'
+              ]
             : ['storage', 'webRequest', 'webRequestBlocking'],
           optional_permissions: ['*://*/*']
         }
