@@ -241,12 +241,12 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.2.0.tgz#8be36a1f66f3265389e90b5f9c9962146758f728"
   integrity sha512-sXo/qW2/pAcmT43VoRKOJbDOfV3cYpq3szSVfIThQXNt+E4DfKj361vaAt3c88U5tPUxzEswam7GW48PJqtKAg==
 
-"@samrum/vite-plugin-web-extension@^3.1.1":
-  version "3.1.1"
-  resolved "https://registry.yarnpkg.com/@samrum/vite-plugin-web-extension/-/vite-plugin-web-extension-3.1.1.tgz#01faaa0d187556dbb1f969175b9ac82bc43640fb"
-  integrity sha512-0U2UJukMkwhL9oREJUvNRyNJBnRr4dVbCEDZ86zV3+TqTHp6uOnsYH1gA1ezVIXS/YPIrMWmRJxeYiKjOphJXQ==
+"@samrum/vite-plugin-web-extension@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@samrum/vite-plugin-web-extension/-/vite-plugin-web-extension-4.1.0.tgz#9eb9a86e6326005ebfd6640512e815864ab9fd25"
+  integrity sha512-svWVC8uucBBf96mPd8JFNCis+daH+IlZmbg95iCdKJfMi+DmSdqnfPNJ1oxNx8/LrrMz1Mn8BY04RnWx4qOPVA==
   dependencies:
-    "@types/chrome" "^0.0.206"
+    "@types/chrome" "^0.0.227"
     "@types/etag" "^1.8.1"
     content-security-policy-parser "^0.4.1"
     etag "^1.8.1"
@@ -254,10 +254,10 @@
     magic-string "^0.27.0"
     vite "^4.1.1"
 
-"@types/chrome@^0.0.206":
-  version "0.0.206"
-  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.206.tgz#ad1fd9799f368b5993d7c240492d4adaf5efbd8c"
-  integrity sha512-fQnTFjghPB9S4UzbfublUB6KmsBkvvJeGXGaaoD5Qu+ZxrDUfgJnKN5egLSzDcGAH5YxQubDgbCdNwwUGewQHg==
+"@types/chrome@^0.0.227":
+  version "0.0.227"
+  resolved "https://registry.yarnpkg.com/@types/chrome/-/chrome-0.0.227.tgz#06ac653adb4cb8a192f6e42d3a2079ef884cdf34"
+  integrity sha512-l1sVnf/1wZ/oNPw5X7OJMZjQlqVf3tPO50aE/aETHQRbrYhlHZkwv7lcuOWCimRSkFdHvAW4M+RIBAZACblXng==
   dependencies:
     "@types/filesystem" "*"
     "@types/har-format" "*"
