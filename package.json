@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^10.7.0",
-    "vue": "^3.3.11"
+    "vue": "^3.4.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.5.1",
