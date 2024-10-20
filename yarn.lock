@@ -343,10 +343,10 @@
   resolved "https://registry.yarnpkg.com/@rushstack/eslint-patch/-/eslint-patch-1.10.3.tgz#391d528054f758f81e53210f1a1eebcf1a8b1d20"
   integrity sha512-qC/xYId4NMebE6w/V33Fh9gWxLgURiNYgVNObbJl2LZv0GUUItCcCqC5axQSwRaAgaxl2mELq1rMzlswaQ0Zxg==
 
-"@samrum/vite-plugin-web-extension@^5.1.0":
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/@samrum/vite-plugin-web-extension/-/vite-plugin-web-extension-5.1.0.tgz#508238aaec00e51324cd86ff211db5aae37332ef"
-  integrity sha512-j8OkzLUx1/MBFQWjpbGXfu+rIF23Vk6I/D4xjmex+cwpKDzEidfOTcbJx0ZAsHTyV7VwAbuxNuUiODPJh+XFcw==
+"@samrum/vite-plugin-web-extension@^5.1.1":
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/@samrum/vite-plugin-web-extension/-/vite-plugin-web-extension-5.1.1.tgz#3887666ba23889475cfbd4d3c7bbf3ed20ce4f7d"
+  integrity sha512-ZpmAN5bGaPouW8iwwCpz5UpvAHGG5f1poxtvjych/C7BIg0A1D8IM9ewacBO3odf5iuuPZIA0SFdgwtgHozueA==
   dependencies:
     "@types/chrome" "^0.0.233"
     "@types/etag" "^1.8.3"
