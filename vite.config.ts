@@ -37,9 +37,9 @@ export default defineConfig(({ mode }) => {
             page: "index.html",
             open_in_tab: true,
           },
+          ...(isSafari ? { chrome_url_overrides: { newtab: "new_tab_page.html" } } : {}),
           permissions: isSafari
             ? [
-                "activeTab",
                 "storage",
                 "declarativeNetRequest",
                 "declarativeNetRequestWithHostAccess",
@@ -53,8 +53,7 @@ export default defineConfig(({ mode }) => {
                 "browserSettings",
                 "webNavigation",
               ],
-          optional_permissions: ["*://*/*"],
-          ...(isSafari ? { chrome_url_overrides: { newtab: "new_tab_page.html" } } : {})
+          optional_permissions: ["*://*/*"]
         },
       }),
       {
@@ -71,8 +70,8 @@ export default defineConfig(({ mode }) => {
             const htmlPath = 'dist/new_tab_page.html';
             let html = readFileSync(htmlPath, 'utf8');
             html = html.replace(
-              'document.querySelector("iframe").src = \'\'',
-              `document.querySelector("iframe").src = '${env.VITE_NEW_PAGE_URL}'`
+              'VITE_NEW_PAGE_URL',
+              `${env.VITE_NEW_PAGE_URL}`
             );
             writeFileSync(htmlPath, html);
           }

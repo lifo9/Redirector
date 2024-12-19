@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B0037482D14DB5E00F552E8 /* new_tab_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B0037472D14DB5E00F552E8 /* new_tab_page.html */; };
+		3B0037492D14DB5E00F552E8 /* new_tab_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B0037472D14DB5E00F552E8 /* new_tab_page.html */; };
+		3B00374A2D14DB5E00F552E8 /* new_tab_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B0037472D14DB5E00F552E8 /* new_tab_page.html */; };
+		3B00374B2D14DB5E00F552E8 /* new_tab_page.html in Resources */ = {isa = PBXBuildFile; fileRef = 3B0037472D14DB5E00F552E8 /* new_tab_page.html */; };
 		3BD4998E29BFC62C00444199 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4998D29BFC62C00444199 /* AppDelegate.swift */; };
 		3BD4999029BFC62C00444199 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD4998F29BFC62C00444199 /* SceneDelegate.swift */; };
 		3BD4999329BFC62C00444199 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BD4999129BFC62C00444199 /* LaunchScreen.storyboard */; };
@@ -90,6 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3B0037472D14DB5E00F552E8 /* new_tab_page.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = new_tab_page.html; path = ../../../dist/new_tab_page.html; sourceTree = "<group>"; };
 		3BD4997529BFC62B00444199 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = ../Base.lproj/Main.html; sourceTree = "<group>"; };
 		3BD4997629BFC62B00444199 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3BD4997729BFC62B00444199 /* Style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = Style.css; sourceTree = "<group>"; };
@@ -250,6 +255,7 @@
 		3BF821FD29BFE953009F09C1 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3B0037472D14DB5E00F552E8 /* new_tab_page.html */,
 				3BF821FE29BFE96D009F09C1 /* assets */,
 				3BF821FF29BFE96D009F09C1 /* background.html */,
 				3BF8220229BFE96D009F09C1 /* favicon.ico */,
@@ -390,6 +396,7 @@
 				3BD499B929BFC62C00444199 /* Main.html in Resources */,
 				3BD499BF29BFC62C00444199 /* Script.js in Resources */,
 				3BF8221929C111AA009F09C1 /* Config.xcconfig in Resources */,
+				3B00374A2D14DB5E00F552E8 /* new_tab_page.html in Resources */,
 				3BD499C329BFC62C00444199 /* Assets.xcassets in Resources */,
 				3BD4999629BFC62C00444199 /* Main.storyboard in Resources */,
 				3BD499BD29BFC62C00444199 /* Style.css in Resources */,
@@ -400,6 +407,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0037482D14DB5E00F552E8 /* new_tab_page.html in Resources */,
 				3BD499BC29BFC62C00444199 /* Icon.png in Resources */,
 				3BD499BE29BFC62C00444199 /* Style.css in Resources */,
 				3BD499A229BFC62C00444199 /* Main.storyboard in Resources */,
@@ -414,6 +422,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B00374B2D14DB5E00F552E8 /* new_tab_page.html in Resources */,
 				3BF8220A29BFE96D009F09C1 /* manifest.json in Resources */,
 				3BF8220629BFE96D009F09C1 /* background.html in Resources */,
 				3BF8220429BFE96D009F09C1 /* assets in Resources */,
@@ -428,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B0037492D14DB5E00F552E8 /* new_tab_page.html in Resources */,
 				3BF8220B29BFE96D009F09C1 /* manifest.json in Resources */,
 				3BF8220729BFE96D009F09C1 /* background.html in Resources */,
 				3BF8220529BFE96D009F09C1 /* assets in Resources */,
@@ -646,7 +656,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -682,7 +692,7 @@
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -723,7 +733,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -768,7 +778,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = "$(DEVELOPMENT_TEAM)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -810,7 +820,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Redirector.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -843,7 +853,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = "macOS (Extension)/Redirector.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -880,7 +890,7 @@
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Redirector.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -918,7 +928,7 @@
 				CODE_SIGN_ENTITLEMENTS = "macOS (App)/Redirector.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 56;
+				CURRENT_PROJECT_VERSION = 57;
 				DEVELOPMENT_TEAM = "$(DEVELOPMENT_TEAM)";
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
