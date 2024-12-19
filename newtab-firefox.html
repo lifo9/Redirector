@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>New Tab</title>
+  </head>
+  <body>
+    <iframe
+      src="about:blank"
+      style="border: 0; position: absolute; top: 0; left: 0; width: 100vw; height: 100vh;"
+    ></iframe>
+    <script>
+    ;(async function() {
+    const homepageRaw = (await browser.browserSettings.homepageOverride.get({}))
+      .value
+      const homepage = /^https?:\/\//.test(homepageRaw)
+        ? homepageRaw
+        : "http://" + homepageRaw
+      document.querySelector("iframe").src = homepage
+    })()
+    </script>
+  </body>
+</html>

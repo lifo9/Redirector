@@ -48,6 +48,7 @@ jobs:
           FASTLANE_CERTIFICATES_REPO_URL: '${{ secrets.FASTLANE_CERTIFICATES_REPO_URL }}'
           APP_NAME: '${{ secrets.APP_NAME }}'
           DEVELOPMENT_TEAM: '${{ secrets.DEVELOPMENT_TEAM }}'
+          VITE_NEW_PAGE_URL: '${{ secrets.VITE_NEW_PAGE_URL }}'
 
       - name: Commit new version number
         run: |
