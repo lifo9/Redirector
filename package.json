@@ -16,7 +16,7 @@
     "vue": "^3.4.31"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.10.3",
+    "@rushstack/eslint-patch": "^1.10.5",
     "@samrum/vite-plugin-web-extension": "^5.1.1",
     "@types/chrome": "^0.0.268",
     "@types/node": "^22.7.7",
