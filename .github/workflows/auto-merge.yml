@@ -1,0 +1,35 @@
+name: Auto-merge Dependabot PRs Weekly
+on:
+  schedule:
+    - cron: '0 20 * * 5'  # Every Monday at 9 AM
+  workflow_dispatch:
+
+jobs:
+  auto-merge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Auto-merge Dependabot PRs
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const prs = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open'
+            });
+            
+            for (const pr of prs.data) {
+              if (pr.user.login === 'dependabot[bot]') {
+                try {
+                  await github.rest.pulls.merge({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: pr.number,
+                    merge_method: 'rebase'
+                  });
+                  console.log(`Merged PR #${pr.number}: ${pr.title}`);
+                } catch (error) {
+                  console.log(`Failed to merge PR #${pr.number}: ${error.message}`);
+                }
+              }
+            }
