@@ -5,17 +5,26 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
       interval: "weekly"
+    auto-merge:
+      enabled: true
+      merge-method: "rebase"
+    
   - package-ecosystem: "bundler"
     directory: "/xcode/fastlane"
     schedule:
       interval: "weekly"
+    auto-merge:
+      enabled: true
+      merge-method: "rebase"
+    
   - package-ecosystem: "github-actions"
-    # Workflow files stored in the
-    # default location of `.github/workflows`
     directory: "/"
     schedule:
       interval: "weekly"
+    auto-merge:
+      enabled: true
+      merge-method: "rebase"
