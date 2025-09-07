@@ -1,0 +1,42 @@
+name: Deploying to Firefox Add-ons
+on:
+  release:
+    types: [published]
+
+jobs:
+  deploy-firefox:
+    name: Deploying Firefox Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Setup Node.js for Firefox extension
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
+
+      - name: Install web-ext
+        run: npm install -g web-ext
+
+      - name: Build Firefox extension
+        env:
+          VITE_FF_EXTENSION_ID: "${{ secrets.FF_EXTENSION_ID }}"
+        run: |
+          yarn set version stable && \
+          unset VITE_NEW_PAGE_URL && \
+          yarn install --immutable && \
+          yarn build
+
+      - name: Sign and submit Firefox extension
+        run: |
+          web-ext sign \
+            --source-dir dist \
+            --api-key="${{ secrets.FIREFOX_JWT_ISSUER }}" \
+            --api-secret="${{ secrets.FIREFOX_JWT_SECRET }}" \
+            --channel=listed
