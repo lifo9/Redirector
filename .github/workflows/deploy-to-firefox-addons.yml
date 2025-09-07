@@ -1,11 +1,11 @@
-name: Deploying to Firefox Add-ons
+name: Deploy to Firefox Add-ons
 on:
   release:
     types: [published]
 
 jobs:
   deploy-firefox:
-    name: Deploying Firefox Extension
+    name: Deploying to Firefox Add-ons
     runs-on: ubuntu-latest
 
     steps:
