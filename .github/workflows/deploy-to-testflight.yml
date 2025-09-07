@@ -18,6 +18,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+          ref: master
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -57,4 +60,4 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "Increment build number"
-          git push origin master
+          git push
