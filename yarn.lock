@@ -3809,7 +3809,7 @@ __metadata:
     npm-run-all: ^4.1.5
     postcss: ^8.5.6
     prettier: ^3.6.2
-    tailwindcss: ^4.1.11
+    tailwindcss: ^4.1.13
     typescript: ~5.8.3
     vite: ^5.4.19
     vue: ^3.5.20
@@ -4313,10 +4313,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.1.12, tailwindcss@npm:^4.1.11":
+"tailwindcss@npm:4.1.12":
   version: 4.1.12
   resolution: "tailwindcss@npm:4.1.12"
   checksum: 0e41513f117a5be5126ef7afad3167581e2564631376ea6221711f3f33c0ffec46bd1b4b7dd13b6c8f52cda2cd12b48666efbd2a451152ffe09609690392fe4c
+  languageName: node
+  linkType: hard
+
+"tailwindcss@npm:^4.1.13":
+  version: 4.1.13
+  resolution: "tailwindcss@npm:4.1.13"
+  checksum: 25e2883c69190c6474a6c44caed8f82511a4025a2285e34bca4b79671a73acd79e74844a4908313098218de81a5aba62df727bb6ee26f69eeca3386b4941de4b
   languageName: node
   linkType: hard
 
