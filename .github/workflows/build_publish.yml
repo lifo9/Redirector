@@ -1,0 +1,99 @@
+name: Build & Publish
+on:
+  push:
+    branches: [master]
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron: "0 0 */80 * *"
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  deploy-ios:
+    name: Deploying to Testflight
+    runs-on: macOS-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          working-directory: xcode/fastlane
+          ruby-version: "3.2"
+          bundler-cache: true
+
+      - name: Deploy iOS Beta to TestFlight via Fastlane
+        working-directory: xcode/fastlane
+        run: bundle exec fastlane ios closed_beta
+        env:
+          APP_STORE_CONNECT_TEAM_ID: "${{ secrets.APP_STORE_CONNECT_TEAM_ID }}"
+          DEVELOPER_APP_ID: "${{ secrets.DEVELOPER_APP_ID }}"
+          DEVELOPER_APP_IDENTIFIER: "${{ secrets.DEVELOPER_APP_IDENTIFIER }}"
+          DEVELOPER_EXTENSION_APP_IDENTIFIER: "${{ secrets.DEVELOPER_EXTENSION_APP_IDENTIFIER }}"
+          DEVELOPER_PORTAL_TEAM_ID: "${{ secrets.DEVELOPER_PORTAL_TEAM_ID }}"
+          FASTLANE_APPLE_ID: "${{ secrets.FASTLANE_APPLE_ID }}"
+          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: "${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}"
+          MATCH_PASSWORD: "${{ secrets.MATCH_PASSWORD }}"
+          GIT_AUTHORIZATION: "${{ secrets.GIT_AUTHORIZATION }}"
+          PROVISIONING_PROFILE_SPECIFIER: "${{ secrets.PROVISIONING_PROFILE_SPECIFIER }}"
+          PROVISIONING_PROFILE_SPECIFIER_EXTENSION: "${{ secrets.PROVISIONING_PROFILE_SPECIFIER_EXTENSION }}"
+          TEMP_KEYCHAIN_PASSWORD: "${{ secrets.TEMP_KEYCHAIN_PASSWORD }}"
+          TEMP_KEYCHAIN_USER: "${{ secrets.TEMP_KEYCHAIN_USER }}"
+          APPLE_KEY_ID: "${{ secrets.APPLE_KEY_ID }}"
+          APPLE_ISSUER_ID: "${{ secrets.APPLE_ISSUER_ID }}"
+          APPLE_KEY_CONTENT: "${{ secrets.APPLE_KEY_CONTENT }}"
+          FASTLANE_CERTIFICATES_REPO_URL: "${{ secrets.FASTLANE_CERTIFICATES_REPO_URL }}"
+          APP_NAME: "${{ secrets.APP_NAME }}"
+          DEVELOPMENT_TEAM: "${{ secrets.DEVELOPMENT_TEAM }}"
+          VITE_NEW_PAGE_URL: "${{ secrets.VITE_NEW_PAGE_URL }}"
+
+  deploy-firefox:
+    name: Deploying Firefox Extension
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Setup Node.js for Firefox extension
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install web-ext
+        run: npm install -g web-ext
+
+      - name: Build Firefox extension
+        run: |
+          unset VITE_NEW_PAGE_URL && \
+          yarn install && \
+          yarn version patch && \
+          VITE_FF_EXTENSION_ID="{{ secrets.FF_EXTENSION_ID }}" yarn build
+      - name: Sign and submit Firefox extension
+        run: |
+          web-ext sign \
+            --source-dir dist
+            --api-key="${{ secrets.FIREFOX_JWT_ISSUER }}" \
+            --api-secret="${{ secrets.FIREFOX_JWT_SECRET }}" \
+            --channel=listed
+
+  commit-changes:
+    name: Commit version changes
+    runs-on: ubuntu-latest
+    needs: [deploy-ios, deploy-firefox]
+    if: always()
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Commit new version number
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "Increment build number / version" || echo "No changes to commit"
+          git push

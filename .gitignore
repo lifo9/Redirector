@@ -140,3 +140,4 @@ report.xml
 vendor
 build
 .yarn
+*.xpi

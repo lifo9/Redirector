@@ -1,6 +1,6 @@
 {
   "name": "redirector",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Allows you to set custom redirects. It is useful e.g. for redirecting popular sites to alternative frontends",
   "license": "MIT",
   "scripts": {
