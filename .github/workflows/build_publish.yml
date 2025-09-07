@@ -64,7 +64,7 @@ jobs:
       - name: Setup Node.js for Firefox extension
         uses: actions/setup-node@v4
         with:
-          node-version: "lts"
+          node-version: "lts/*"
           cache: "yarn"
 
       - name: Install web-ext
