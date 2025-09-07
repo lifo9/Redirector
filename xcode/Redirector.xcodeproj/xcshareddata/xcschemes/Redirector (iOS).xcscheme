@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1420"
+   LastUpgradeVersion = "1640"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -10,7 +10,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Build extension"
-               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;export VITE_NEW_PAGE_URL=${VITE_NEW_PAGE_URL}&#10;yarn install&#10;yarn build&#10;"
+               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;fi&#10;&#10;corepack enable&#10;yarn set version stable&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
                shellToInvoke = "/bin/bash&#10;">
                <EnvironmentBuildable>
                   <BuildableReference
@@ -96,20 +96,20 @@
       <PreActions>
          <ExecutionAction
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
-         <ActionContent
-            title = "Build extension"
-            scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;  corepack enable&#10;else&#10;  corepack enable&#10;fi&#10;&#10;yarn set version stable&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
-            shellToInvoke = "/bin/bash">
-            <EnvironmentBuildable>
-               <BuildableReference
-                  BuildableIdentifier = "primary"
-                  BlueprintIdentifier = "3BD4998929BFC62C00444199"
-                  BuildableName = "Redirector.app"
-                  BlueprintName = "Redirector (iOS)"
-                  ReferencedContainer = "container:Redirector.xcodeproj">
-               </BuildableReference>
-            </EnvironmentBuildable>
-         </ActionContent>
+            <ActionContent
+               title = "Build extension"
+               scriptText = "cd $PROJECT_DIR/../&#10;&#10;if [ -d &quot;/opt/homebrew/opt/nvm/&quot; ]; then&#10;  export NVM_DIR=&quot;$HOME/.nvm&quot;&#10;  [ -s &quot;/opt/homebrew/opt/nvm/nvm.sh&quot; ] &amp;&amp; \. &quot;/opt/homebrew/opt/nvm/nvm.sh&quot;&#10;  export PATH=$PATH:~/.yarn/bin&#10;  corepack enable&#10;else&#10;  corepack enable&#10;fi&#10;&#10;yarn set version stable&#10;export VITE_BROWSER_TYPE=&apos;safari&apos;&#10;yarn install&#10;yarn build&#10;"
+               shellToInvoke = "/bin/bash">
+               <EnvironmentBuildable>
+                  <BuildableReference
+                     BuildableIdentifier = "primary"
+                     BlueprintIdentifier = "3BD4998929BFC62C00444199"
+                     BuildableName = "Redirector.app"
+                     BlueprintName = "Redirector (iOS)"
+                     ReferencedContainer = "container:Redirector.xcodeproj">
+                  </BuildableReference>
+               </EnvironmentBuildable>
+            </ActionContent>
          </ExecutionAction>
       </PreActions>
    </ArchiveAction>
