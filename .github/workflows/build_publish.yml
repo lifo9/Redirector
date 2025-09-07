@@ -57,7 +57,7 @@ jobs:
           git config user.email github-actions@github.com
           git add .
           git commit -m "Increment build number"
-          git push
+          git push origin master
 
   deploy-firefox:
     name: Deploying Firefox Extension
