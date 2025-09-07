@@ -81,7 +81,7 @@ jobs:
       - name: Sign and submit Firefox extension
         run: |
           web-ext sign \
-            --source-dir dist
+            --source-dir dist \
             --api-key="${{ secrets.FIREFOX_JWT_ISSUER }}" \
             --api-secret="${{ secrets.FIREFOX_JWT_SECRET }}" \
             --channel=listed
