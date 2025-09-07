@@ -9,7 +9,7 @@
           :class="{
             'text-right': (column as any).align === 'right',
             'text-center': (column as any).align === 'center',
-            'w-1 whitespace-nowrap': (column as any).shrink
+            'w-1 whitespace-nowrap': (column as any).shrink,
           }"
           :width="(column as any).width"
         >
@@ -26,7 +26,7 @@
           :class="{
             'text-right': (column as any).align === 'right',
             'text-center': (column as any).align === 'center',
-            'w-1 whitespace-nowrap': (column as any).shrink
+            'w-1 whitespace-nowrap': (column as any).shrink,
           }"
         >
           <slot :name="key" v-bind="{ item }">
@@ -39,44 +39,46 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { computed } from "vue";
 
 export type Columns = {
   [key: string]:
     | string
     | {
-        label?: string
-        placeholder?: string
-        align?: 'left' | 'right' | 'center'
-        width?: string
-        shrink?: boolean
-      }
-}
+        label?: string;
+        placeholder?: string;
+        align?: "left" | "right" | "center";
+        width?: string;
+        shrink?: boolean;
+      };
+};
 
 export interface Props {
-  columns?: Columns
-  data?: Array<any>
+  columns?: Columns;
+  data?: Array<any>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   columns: () => {
-    return {}
+    return {};
   },
-  data: () => []
-})
+  data: () => [],
+});
 
 const normalizedColumns = computed((): Columns => {
   return Object.entries(props.columns!).reduce(
     (result: any, [key, options]: any) => ({
       ...result,
-      [key]: typeof options === 'string' ? { label: options } : options
+      [key]: typeof options === "string" ? { label: options } : options,
     }),
     {}
-  )
-})
+  );
+});
 </script>
 
 <style scoped>
+@reference "tailwindcss";
+
 tbody tr:hover {
   @apply bg-slate-700;
 }

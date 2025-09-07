@@ -15,15 +15,17 @@
 
 <script lang="ts" setup>
 const props = defineProps({
-  value: { type: Boolean, required: true }
-})
+  value: { type: Boolean, required: true },
+});
 
-const emit = defineEmits(['change'])
+const emit = defineEmits(["change"]);
 </script>
 
 <style scoped>
+@reference "tailwindcss";
+
 .toggle-bg:after {
-  content: '';
+  content: "";
   @apply absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm;
 }
 input:checked + .toggle-bg:after {
