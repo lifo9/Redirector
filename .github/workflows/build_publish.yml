@@ -72,6 +72,7 @@ jobs:
 
       - name: Build Firefox extension
         run: |
+          yarn set version stable && \
           unset VITE_NEW_PAGE_URL && \
           yarn install && \
           yarn version patch && \
