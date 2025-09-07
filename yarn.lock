@@ -917,13 +917,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.1.4":
-  version: 0.1.4
-  resolution: "@types/chrome@npm:0.1.4"
+"@types/chrome@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@types/chrome@npm:0.1.6"
   dependencies:
-    "@types/filesystem": "npm:*"
-    "@types/har-format": "npm:*"
-  checksum: 600e817451e36c0e56c7a4a39da43d0fbef46fce664541fcc4f48d65f293b12dd551efda5f54cee1e64388bcd76946a325fcefb0463e2817003e51032a8000fc
+    "@types/filesystem": "*"
+    "@types/har-format": "*"
+  checksum: 414e75bc9f304a882d33a25a439432461a9646eeb01df9cdd47b38785b087d4e658c8fe17cdd0ea58cc03d28927dd195f05c35b5e0446957c57e9ae6ffa5f2a7
   languageName: node
   linkType: hard
 
@@ -3853,7 +3853,7 @@ __metadata:
     "@rushstack/eslint-patch": ^1.12.0
     "@samrum/vite-plugin-web-extension": ^5.1.1
     "@tailwindcss/postcss": ^4.1.12
-    "@types/chrome": ^0.1.4
+    "@types/chrome": ^0.1.6
     "@types/node": ^24.3.0
     "@vitejs/plugin-vue": ^6.0.1
     "@vue/eslint-config-prettier": ^10.2.0
