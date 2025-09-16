@@ -1,14 +1,38 @@
 <html style="height: 100%">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>New Tab</title>
     <style>
       body, html {
         margin: 0;
         padding: 0;
         height: 100%;
+        width: 100%;
         overflow: hidden;
+        background-color: black;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      iframe {
+        border: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+      }
+      
+      /* Safari iOS specific fixes */
+      @supports (-webkit-touch-callout: none) {
+        body {
+          position: fixed;
+          width: 100vw;
+          height: 100vh;
+        }
       }
     </style>
   </head>
