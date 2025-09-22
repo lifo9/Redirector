@@ -33,7 +33,7 @@
     "prettier": "^3.6.2",
     "tailwindcss": "^4.1.13",
     "typescript": "~5.8.3",
-    "vite": "^7.1.5",
+    "vite": "^7.1.7",
     "vue-tsc": "^3.0.7"
   },
   "packageManager": "yarn@4.9.4"
