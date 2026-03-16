@@ -21,7 +21,7 @@
     "@tailwindcss/postcss": "^4.1.18",
     "@types/chrome": "^0.1.36",
     "@types/node": "^25.3.5",
-    "@vitejs/plugin-vue": "^6.0.4",
+    "@vitejs/plugin-vue": "^6.0.5",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/tsconfig": "^0.9.0",
