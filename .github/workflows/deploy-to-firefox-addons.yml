@@ -28,7 +28,6 @@ jobs:
         env:
           VITE_FF_EXTENSION_ID: "${{ secrets.FF_EXTENSION_ID }}"
         run: |
-          yarn set version stable && \
           unset VITE_NEW_PAGE_URL && \
           yarn install --immutable && \
           yarn build
