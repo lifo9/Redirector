@@ -35,5 +35,8 @@
     "vue-eslint-parser": "^10.4.0",
     "vue-tsc": "^3.3.3"
   },
+  "resolutions": {
+    "@samrum/vite-plugin-web-extension/vite": "8.0.14"
+  },
   "packageManager": "yarn@4.15.0"
 }
