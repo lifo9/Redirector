@@ -36,7 +36,8 @@
     "vue-tsc": "^3.3.3"
   },
   "resolutions": {
-    "@samrum/vite-plugin-web-extension/vite": "8.0.14"
+    "@samrum/vite-plugin-web-extension/vite": "8.0.14",
+    "content-security-policy-parser": "0.6.0"
   },
   "packageManager": "yarn@4.15.0"
 }
