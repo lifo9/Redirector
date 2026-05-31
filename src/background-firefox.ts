@@ -2,8 +2,11 @@
 
 import { getRedirects } from '@/services/RedirectService'
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars, prefer-const
-let handlers: any[] = []
+type RedirectHandler = (
+  request: chrome.webRequest.OnBeforeRequestDetails
+) => chrome.webRequest.BlockingResponse | undefined
+
+let handlers: RedirectHandler[] = []
 
 const loadRules = async () => {
   const activeRedirects = (await getRedirects()).filter(
@@ -16,7 +19,7 @@ const loadRules = async () => {
   handlers = []
 
   activeRedirects.forEach((rule) => {
-    const handler = (request: any) => {
+    const handler: RedirectHandler = (request) => {
       if (request.type !== 'main_frame' || request.method !== 'GET') {
         return
       }

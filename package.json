@@ -1,6 +1,6 @@
 {
   "name": "redirector",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Allows you to set custom redirects. It is useful e.g. for redirecting popular sites to alternative frontends",
   "license": "MIT",
   "scripts": {
@@ -9,32 +9,31 @@
     "preview": "vite preview --port 4173",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix"
   },
   "dependencies": {
     "@vueuse/core": "^14.3.0",
-    "vue": "^3.5.32"
+    "vue": "^3.5.35"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.16.1",
     "@samrum/vite-plugin-web-extension": "^5.1.1",
-    "@tailwindcss/postcss": "^4.2.4",
-    "@types/chrome": "^0.1.39",
-    "@types/node": "^25.6.0",
-    "@vitejs/plugin-vue": "^6.0.6",
+    "@tailwindcss/postcss": "^4.3.0",
+    "@types/chrome": "^0.1.42",
+    "@types/node": "^25.9.1",
+    "@vitejs/plugin-vue": "^6.0.7",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.7.0",
     "@vue/tsconfig": "^0.9.1",
-    "autoprefixer": "^10.5.0",
-    "eslint": "^10.3.0",
-    "eslint-plugin-vue": "^10.8.0",
-    "npm-run-all": "^4.1.5",
-    "postcss": "^8.5.14",
-    "prettier": "^3.8.1",
+    "eslint": "^10.4.1",
+    "eslint-plugin-vue": "^10.9.1",
+    "npm-run-all2": "^9.0.1",
+    "postcss": "^8.5.15",
+    "prettier": "^3.8.3",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.3",
-    "vite": "^8.0.12",
-    "vue-tsc": "^3.2.6"
+    "vite": "^8.0.14",
+    "vue-eslint-parser": "^10.4.0",
+    "vue-tsc": "^3.3.3"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.14.1"
 }

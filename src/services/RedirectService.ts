@@ -17,7 +17,6 @@ export async function removeUnusedPermissions(newOrigins: string[]) {
   }
 
   await new Promise<void>((resolve) => {
-    // eslint-disable-next-line no-undef
     chrome.permissions.getAll(async (permissions) => {
       await new Promise<void>((resolve) => {
         let deleted = 0
@@ -30,7 +29,6 @@ export async function removeUnusedPermissions(newOrigins: string[]) {
         }
 
         rulesToDelete.forEach((origin) => {
-          // eslint-disable-next-line no-undef
           chrome.permissions.remove(
             {
               origins: [origin]

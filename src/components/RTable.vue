@@ -7,13 +7,13 @@
           :key="key"
           class="p-3 font-bold text-left text-slate-300"
           :class="{
-            'text-right': (column as any).align === 'right',
-            'text-center': (column as any).align === 'center',
-            'w-1 whitespace-nowrap': (column as any).shrink,
+            'text-right': column.align === 'right',
+            'text-center': column.align === 'center',
+            'w-1 whitespace-nowrap': column.shrink
           }"
-          :width="(column as any).width"
+          :width="column.width"
         >
-          {{ (column as any).label }}
+          {{ column.label }}
         </th>
       </tr>
     </thead>
@@ -24,13 +24,13 @@
           :key="key"
           class="py-4 px-3 whitespace-nowrap"
           :class="{
-            'text-right': (column as any).align === 'right',
-            'text-center': (column as any).align === 'center',
-            'w-1 whitespace-nowrap': (column as any).shrink,
+            'text-right': column.align === 'right',
+            'text-center': column.align === 'center',
+            'w-1 whitespace-nowrap': column.shrink
           }"
         >
           <slot :name="key" v-bind="{ item }">
-            {{ item[key] }}
+            {{ getCellValue(item, key) }}
           </slot>
         </td>
       </tr>
@@ -38,42 +38,48 @@
   </table>
 </template>
 
-<script lang="ts" setup>
-import { computed } from "vue";
+<script lang="ts" setup generic="RowType extends object">
+import { computed } from 'vue'
 
-export type Columns = {
-  [key: string]:
-    | string
-    | {
-        label?: string;
-        placeholder?: string;
-        align?: "left" | "right" | "center";
-        width?: string;
-        shrink?: boolean;
-      };
-};
-
-export interface Props {
-  columns?: Columns;
-  data?: Array<any>;
+export type Column = {
+  label?: string
+  placeholder?: string
+  align?: 'left' | 'right' | 'center'
+  width?: string
+  shrink?: boolean
 }
 
-const props = withDefaults(defineProps<Props>(), {
-  columns: () => {
-    return {};
-  },
-  data: () => [],
-});
+export type Columns = {
+  [key: string]: string | Column
+}
 
-const normalizedColumns = computed((): Columns => {
-  return Object.entries(props.columns!).reduce(
-    (result: any, [key, options]: any) => ({
-      ...result,
-      [key]: typeof options === "string" ? { label: options } : options,
+const props = withDefaults(
+  defineProps<{
+    columns?: Columns
+    data?: RowType[]
+  }>(),
+  {
+    columns: () => ({}),
+    data: () => []
+  }
+)
+
+function getCellValue(row: RowType, columnKey: string): unknown {
+  return (row as Record<string, unknown>)[columnKey]
+}
+
+const normalizedColumns = computed<Record<string, Column>>(() =>
+  Object.entries(props.columns).reduce<Record<string, Column>>(
+    (accumulatedColumns, [columnKey, columnOptions]) => ({
+      ...accumulatedColumns,
+      [columnKey]:
+        typeof columnOptions === 'string'
+          ? { label: columnOptions }
+          : columnOptions
     }),
     {}
-  );
-});
+  )
+)
 </script>
 
 <style scoped>

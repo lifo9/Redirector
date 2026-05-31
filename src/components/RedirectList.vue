@@ -60,13 +60,13 @@
       </template>
       <template #pathRegex="{ item }">
         <EditRule
-          :value="item.pathRegex"
+          :value="item.pathRegex ?? ''"
           @input="handleUpdateRule({ id: item.id, pathRegex: $event })"
         />
       </template>
       <template #pathValue="{ item }">
         <EditRule
-          :value="item.pathValue"
+          :value="item.pathValue ?? ''"
           @input="handleUpdateRule({ id: item.id, pathValue: $event })"
         />
       </template>
@@ -187,7 +187,6 @@ async function handleSaveRules() {
   // We cannot e.g. wrap the chrome.permissions.request into promise
   // or move this logic into RedirectService :(
   try {
-    // eslint-disable-next-line no-undef
     chrome.permissions.request(
       {
         origins: origins
@@ -200,7 +199,7 @@ async function handleSaveRules() {
         }
       }
     )
-  } catch (e) {
+  } catch {
     alert(`Invalid origins: ${origins.join(' | ')}`)
   }
 }

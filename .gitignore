@@ -140,4 +140,6 @@ report.xml
 vendor
 build
 .yarn
+.corepack
+.direnv
 *.xpi

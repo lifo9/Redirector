@@ -33,16 +33,16 @@ async function loadRules() {
       return
     }
 
-    const ruleDeclaration: any = {
+    const ruleDeclaration: chrome.declarativeNetRequest.Rule = {
       id: rule.id,
       priority: 1,
       action: {
-        type: 'redirect',
+        type: chrome.declarativeNetRequest.RuleActionType.REDIRECT,
         redirect: { transform: { ...transformation } }
       },
       condition: {
         urlFilter: rule.origin,
-        resourceTypes: ['main_frame']
+        resourceTypes: [chrome.declarativeNetRequest.ResourceType.MAIN_FRAME]
       }
     }
 
