@@ -38,4 +38,5 @@ jobs:
             --source-dir dist \
             --api-key="${{ secrets.FIREFOX_JWT_ISSUER }}" \
             --api-secret="${{ secrets.FIREFOX_JWT_SECRET }}" \
-            --channel=listed
+            --channel=listed \
+            --approval-timeout=0
