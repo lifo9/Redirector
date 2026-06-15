@@ -19,7 +19,7 @@
     "@samrum/vite-plugin-web-extension": "^5.1.1",
     "@tailwindcss/postcss": "^4.3.0",
     "@types/chrome": "^0.1.43",
-    "@types/node": "^25.9.1",
+    "@types/node": "^25.9.3",
     "@vitejs/plugin-vue": "^6.0.7",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.8.0",
