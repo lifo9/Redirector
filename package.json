@@ -27,7 +27,7 @@
     "eslint": "^10.6.0",
     "eslint-plugin-vue": "^10.9.2",
     "npm-run-all2": "^9.0.3",
-    "postcss": "^8.5.25",
+    "postcss": "^8.5.26",
     "prettier": "^3.9.5",
     "tailwindcss": "^4.3.2",
     "typescript": "~6.0.3",
