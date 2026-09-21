@@ -868,13 +868,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.2.9":
-  version: 0.2.9
-  resolution: "@types/chrome@npm:0.2.9"
+"@types/chrome@npm:^0.3.0":
+  version: 0.3.0
+  resolution: "@types/chrome@npm:0.3.0"
   dependencies:
     "@types/filesystem": "npm:*"
     "@types/har-format": "npm:*"
-  checksum: 10c0/6d952f2c993478afa000a75a3422dc97b5041c1a692f8225762650eafe3aff7597b0e76519297b60055c82e575d5edcc1f03118870981da99ac71351fddd1d4f
+  checksum: 10c0/b7b9a8e692cdbb10bb1334637e6d8ad2b02be8aeea749bc5218169379430ae93fe18cfead81a7af716a0270c258dcb8c5813690085b1f8255cdf54b8467817f2
   languageName: node
   linkType: hard
 
@@ -2999,7 +2999,7 @@ __metadata:
   dependencies:
     "@samrum/vite-plugin-web-extension": "npm:^5.1.1"
     "@tailwindcss/postcss": "npm:^4.3.3"
-    "@types/chrome": "npm:^0.2.9"
+    "@types/chrome": "npm:^0.3.0"
     "@types/node": "npm:^26.4.1"
     "@vitejs/plugin-vue": "npm:^6.0.8"
     "@vue/eslint-config-prettier": "npm:^10.2.0"
