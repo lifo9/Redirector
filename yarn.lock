@@ -856,13 +856,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/chrome@npm:^0.3.0":
-  version: 0.3.0
-  resolution: "@types/chrome@npm:0.3.0"
+"@types/chrome@npm:^0.3.5":
+  version: 0.3.5
+  resolution: "@types/chrome@npm:0.3.5"
   dependencies:
     "@types/filesystem": "npm:*"
     "@types/har-format": "npm:*"
-  checksum: 10c0/b7b9a8e692cdbb10bb1334637e6d8ad2b02be8aeea749bc5218169379430ae93fe18cfead81a7af716a0270c258dcb8c5813690085b1f8255cdf54b8467817f2
+  checksum: 10c0/824d673a6820d8490217a54736f53ae0d883affb5d290232cb7ef9d69e94111a25b0e3520beb5be48dc806707459ca0a08033caf30f189eac7af7a534f38a54a
   languageName: node
   linkType: hard
 
@@ -3073,7 +3073,7 @@ __metadata:
   dependencies:
     "@samrum/vite-plugin-web-extension": "npm:^5.1.1"
     "@tailwindcss/postcss": "npm:^4.3.3"
-    "@types/chrome": "npm:^0.3.0"
+    "@types/chrome": "npm:^0.3.5"
     "@types/node": "npm:^26.6.4"
     "@vitejs/plugin-vue": "npm:^6.0.9"
     "@vue/eslint-config-prettier": "npm:^10.2.0"
@@ -3316,14 +3316,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"source-map-js@npm:^1.2.1":
-  version: 1.2.2
-  resolution: "source-map-js@npm:1.2.2"
-  checksum: 10c0/d5d6dec62266834f83dd4f8a2606a196fb1a006ca5d53b0ef80ee513b7eba2f4e2ae241f4bc129ae7e9b80dea24f6e3d92b446b7e6e96be7653cab8888168a94
-  languageName: node
-  linkType: hard
-
-"source-map-js@npm:^1.2.2":
+"source-map-js@npm:^1.2.1, source-map-js@npm:^1.2.2":
   version: 1.2.2
   resolution: "source-map-js@npm:1.2.2"
   checksum: 10c0/d5d6dec62266834f83dd4f8a2606a196fb1a006ca5d53b0ef80ee513b7eba2f4e2ae241f4bc129ae7e9b80dea24f6e3d92b446b7e6e96be7653cab8888168a94
